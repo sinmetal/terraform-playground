@@ -20,6 +20,7 @@ resource "google_project_iam_binding" "log-writer" {
 
   members = [
     "${google_logging_organization_sink.organization-auditlog-sink.writer_identity}",
+    "${google_logging_organization_sink.organization-gae-sink.writer_identity}",
   ]
 }
 
@@ -32,13 +33,4 @@ resource "google_logging_organization_sink" "organization-gae-sink" {
 
   # Log all WARN or higher severity messages relating to instances
   filter = "resource.type = gae_app"
-}
-
-resource "google_project_iam_binding" "log-writer" {
-  project = "logging-sinmetal-org"
-  role    = "roles/bigquery.dataEditor"
-
-  members = [
-    "${google_logging_organization_sink.organization-gae-sink.writer_identity}",
-  ]
 }
