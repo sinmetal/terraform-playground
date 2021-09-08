@@ -15,9 +15,4 @@ resource "google_cloud_run_service" "hello" {
       }
     }
   }
-
-  lifecycle {
-    ignore_changes = [
-    ]
-  }
 }
