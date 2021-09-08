@@ -6,6 +6,8 @@ resource "google_cloud_run_service" "hello" {
   template {
     metadata {
       annotations = {
+      }
+      labels = {
         "run.googleapis.com/ingress" = "internal-and-cloud-load-balancing"
       }
     }
