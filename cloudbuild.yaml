@@ -1,7 +1,7 @@
 steps:
-- name: 'hashicorp/terraform:full'
+- name: 'hashicorp/terraform:latest'
   args: [ 'init']
-- name: 'hashicorp/terraform:full'
-  args: [ 'plan', '.']
-- name: 'hashicorp/terraform:full'
-  args: [ 'apply', '-auto-approve', '.']
+- name: 'hashicorp/terraform:latest'
+  args: [ 'plan']
+- name: 'hashicorp/terraform:latest'
+  args: [ 'apply', '-auto-approve']
