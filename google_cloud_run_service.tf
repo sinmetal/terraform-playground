@@ -1,4 +1,5 @@
 resource "google_cloud_run_service" "hello" {
+  project  = "sinmetal-terraform"
   name     = "hello"
   location = "asia-northeast1"
 
